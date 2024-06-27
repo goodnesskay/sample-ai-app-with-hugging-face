@@ -24,7 +24,7 @@ app.post('/api/v1/generate', async (req, res) => {
         res.send(response.data);
     } catch (error) {
         console.error('Error calling the Hugging Face API:', error);
-        res.status(500).send('An error occurred');
+        res.status(500).send('An error occurred', error);
     }
 });
 
