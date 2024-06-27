@@ -13,7 +13,7 @@ app.post('/api/v1/generate', async (req, res) => {
     const inputText = req.body.text;
 
     try {
-        const response = await axios.post(MODEL_URL+'/meta-llama/Llama-2-70b-hf', {
+        const response = await axios.post(MODEL_URL+'/HuggingFaceH4/zephyr-7b-beta', {
             inputs: inputText,
         }, {
             headers: {
