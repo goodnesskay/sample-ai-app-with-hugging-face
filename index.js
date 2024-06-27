@@ -28,7 +28,7 @@ app.post('api/v1/generate', async (req, res) => {
     }
 });
 
-app.post('api/v1/generate', async (req, res) => {
+app.get('/', async (req, res) => {
     res.send("Welcome to the Sample API with Hugging Face");
 });
 
