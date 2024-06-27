@@ -33,7 +33,7 @@ app.post('/api/v1/image/generate', async (req, res) => {
 
     try {
         const response = await axios.post(MODEL_URL+'/CompVis/stable-diffusion-v1-4', {
-            inputs: inputText,
+            prompt: inputText,
         }, {
             headers: {
                 'Authorization': `Bearer ${HUGGING_FACE_API_TOKEN}`
