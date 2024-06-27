@@ -9,7 +9,7 @@ const MODEL_URL = process.env.HUGGING_FACE_BASE_URL;
 
 app.use(express.json());
 
-app.post('api/v1/generate', async (req, res) => {
+app.post('/api/v1/generate', async (req, res) => {
     const inputText = req.body.text;
 
     try {
