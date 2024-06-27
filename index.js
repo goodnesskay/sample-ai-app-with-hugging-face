@@ -4,14 +4,13 @@ const axios = require('axios');
 const app = express();
 const port = process.env.PORT;
 
-// Replace 'your-api-token' with your actual Hugging Face API token
 const HUGGING_FACE_API_TOKEN = process.env.HUGGING_FACE_API_TOKEN;
 const MODEL_URL = process.env.HUGGING_FACE_BASE_URL;
 
 app.use(express.json());
 
-app.post('/generate', async (req, res) => {
-    const inputText = req.body.input;
+app.post('api/v1/generate', async (req, res) => {
+    const inputText = req.body.text;
 
     try {
         const response = await axios.post(MODEL_URL/gpt2, {
@@ -27,6 +26,10 @@ app.post('/generate', async (req, res) => {
         console.error('Error calling the Hugging Face API:', error);
         res.status(500).send('An error occurred');
     }
+});
+
+app.post('api/v1/generate', async (req, res) => {
+    res.send("Welcome to the Sample API with Hugging Face");
 });
 
 app.listen(port, () => {
