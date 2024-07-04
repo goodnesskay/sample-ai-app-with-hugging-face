@@ -1,5 +1,6 @@
 const express = require('express');
 const axios = require('axios');
+const cors = require('cors');
 
 const app = express();
 const port = process.env.PORT;
@@ -8,6 +9,7 @@ const HUGGING_FACE_API_TOKEN = process.env.HUGGING_FACE_API_TOKEN;
 const MODEL_URL = process.env.HUGGING_FACE_BASE_URL;
 
 app.use(express.json());
+app.use(cors());
 
 app.post('/api/v1/generate', async (req, res) => {
     const inputText = req.body.text;
